@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Font Editor</title>   
+
+		<meta charset="utf-8">		
+		<link rel="stylesheet" type="text/css" href="styles/fonts.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+
+		<script type="text/javascript" language="javaScript" src="js/jquery-4.0.0.min.js"></script>
+
+		<script type="text/javascript" language="javaScript" src="js/newClass.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/events.js"></script>
+
+		<script type="text/javascript" language="javaScript" src="js/misc.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/imageToFont.js"></script>
+		
+		<script type="text/javascript" language="javaScript" src="js/workFont.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/zxFont.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/zxFontFull.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/atariFont.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/c64Font.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/c64FontFull.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_8x8_128.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_8x8_256.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_8x16_128.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_8x16_256.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_16x16_128.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_16x16_256.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_16x24_128.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_16x24_256.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_16x32_128.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/ibmFont_16x32_256.js"></script>
+
+		<script type="text/javascript" language="javaScript" src="js/toolbar.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/pixelEditor.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/fontShow.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/modalWindow.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/alertWindow.js"></script>
+		<script type="text/javascript" language="javaScript" src="js/app.js"></script>
+	</head>
+	<body>
+		<div id="workspace" class="workspace"></div>
+	</body>
+	<script language="javascript">
+		try {
+			var newApp = new AppCore('newAppId', 'workspace', 'Font Editor');
+			newApp.start();
+		} catch (e) {
+			console.log('Error [Global]:' + e);
+		}
+	</script>
+</html>

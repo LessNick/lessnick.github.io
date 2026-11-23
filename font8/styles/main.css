@@ -1,0 +1,343 @@
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+
+.workspace {
+	width: 800px;
+	height: 806px; /*762px;*/
+	border-radius: 4px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.3); 
+	box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.3);
+	background: #f1f0f0;
+
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+.noselect {
+	-webkit-user-select: none; /* Safari */
+	user-select: none; /* Non-prefixed version, currently supported by all other modern browsers */
+}
+
+.hiddenElement {
+	display: none;
+}
+
+.winHeader {
+	width: 788px;
+	height: 30px;
+	margin: 4px;
+	border: 2px solid #0000cd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.winFooter {
+	width: 800px;
+	height: 30px;
+	background-color: #dfdfdf;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.charPreview {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 20px;
+	padding: 0 4px;
+}
+
+.winTitleBg {
+	width: 768px;
+	height: 30px;
+	background-image: url('../art/title.png');
+	background-repeat: repeat-x;
+	background-position-y: center;
+	position: absolute;
+}
+
+.winTitle {
+	font-family: 'ZX Spectrum';
+	font-size: 16px;
+	display: inherit;
+	color: #0000cd;
+	background: #f1f0f0;
+	z-index: 3;
+	padding: 0 10px;
+}
+
+.winToolbar {
+	background-color: #f1f0f0;
+	width: calc(792+50)px;
+	height: 24px;
+	margin: 4px 0 16px 0;
+	display: flex;
+	padding: 4px 4px;
+}
+
+.toolbarButton {
+	/* background-image: url('../art/buttons.png'); */
+	background-image: url('../art/buttons24.png');
+	background-repeat: no-repeat;
+	background-position-y: 0;
+	width: 24px;
+	height: 24px;
+	image-rendering: pixelated;
+}
+
+.toolbarButton[disabled="true"] {
+	background-position-y: -72px;
+}
+
+.toolbarPaddingB {
+	background-image: url('../art/delim.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.middleSelectorUp {
+	border: 2px solid #000;
+	border-bottom: none;
+	width: 240px;
+	height: 20px;
+}
+
+.middleEditors {
+	display: flex;
+	align-items: center;
+}
+
+.editorArrowsUp,
+.editorArrowsDown {
+	display: flex;
+	justify-content: center;
+}
+
+.editorCenter {
+	display: flex;
+	align-items: center;
+}
+
+.editorCenter .editorCanvas {
+	margin: 10px;
+}
+
+.editor button {
+	margin: 1px;
+	width: 23px;
+	height: 23px;
+	padding: 0;
+	font-weight: bold;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.editorArrowLeft,
+.editorArrowRight {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	width: 30px;
+}
+
+.editorCanvas {
+	border: 2px solid #000;
+	margin: 0 30px;
+}
+
+.middleSelectorDown {
+	border: 2px solid #000;
+	border-top: none;
+	width: 240px;
+	height: 20px;
+	margin-bottom: 30px;
+}
+
+.modalDimmer {
+	background-color: #ffffffe0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.modalWindow,
+.alertWindow {
+	width: 512px;
+	height: 384px;
+	border-radius: 4px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.3); 
+	box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.3);
+	background: #f8f8f8;
+
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	z-index: 2;
+}
+
+.alertWindow {
+	width: 512px;
+	height: 240px;
+}
+
+.modalHeader,
+.alertHeader {
+	width: 500px;
+	height: 30px;
+	margin: 4px;
+	border: 2px solid #0000cd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modalFooter,
+.alertFooter {
+	width: 512px;
+	height: 45px;
+	background-color: #f2f2f2;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.modalTitleBg,
+.alertTitleBg {
+	width: 480px;
+	height: 30px;
+	background-image: url('../art/title.png');
+	background-repeat: repeat-x;
+	background-position-y: center;
+	position: absolute;
+}
+
+.modalTitle,
+.alertTitle {
+	font-family: 'ZX Spectrum';
+	font-size: 16px;
+	display: inherit;
+	color: #0000cd;
+	background: #f8f8f8;
+	z-index: 3;
+	padding: 0 10px;
+}
+
+.modalFooterButton,
+.alertFooterButton {
+	border: none;
+	border-radius: 4px;
+	padding: 0 10px;
+	margin: 0 5px;
+	min-width: 100px;
+	min-height: 30px;
+	font-family: 'Press Start 2P';
+	font-size: 12px;
+}
+
+.red {
+	background-color: #f7967b;
+	color: #444444;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.red:hover {
+	background-color: #d6512d;
+	color: #fff;
+}
+
+.green {
+	background-color: #8ece56;
+	color: #444;
+	transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+.green:hover {
+	background-color: #68a92f;
+	color: #fff;
+}
+
+.modalContent,
+.alertContent {
+	padding: 0px 10px;
+	font-family: 'Press Start 2P';
+	font-size: 12px;
+	text-align: left;
+	line-height: 22px;
+}
+
+.alertContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 150px;
+	text-align: center;
+}
+
+.modalContent fieldset {
+	border: 2px solid #c8c7c7;
+	width: 450px;
+	/* display: flex; */
+	align-items: baseline;
+	margin-bottom: 10px;
+}
+
+.modalContent fieldset label {
+	margin: 0 10px 0 -8px;
+}
+
+.modalContentLegend {
+	padding: 0 10px;
+	color: #0000cd;
+}
+
+.modalContentLabel {
+	width: 100%;
+}
+
+.modalContentRadio {
+	width: 100%;
+	/* display: flex; */
+	align-items: baseline;
+}
+
+.modalContentRadio label {
+	/* margin-left: 4px; */
+	margin: 0 10px 0 -8px;
+	white-space: pre-wrap;
+}
+.modalContent label {
+	color: #000;
+}
+.modalContent label.disabled {
+	color: #c8c7c7;
+}
